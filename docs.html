@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=UTF-8>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WiseLang Documentation</title>
+	<meta name="description" content="WiseLang: A Wise language, for wise members of AUI.">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="WiseLang">
+	<meta property="og:description" content="WiseLang: A Wise language, for wise members of AUI.">
+	<meta property="og:image" content="https://cdn.discordapp.com/emojis/832478907873624064.png?v=1" />
+	<meta name="theme-color" content="#008700" />
+	<link rel='icon' type='image/png' href='https://cdn.discordapp.com/emojis/832478907873624064.png?v=1'>
+	<link rel='icon' sizes='192x192' href='https://cdn.discordapp.com/emojis/832478907873624064.png?v=1'>
+	<meta name='mobile-web-app-capable' content='yes'>
+	<meta name='apple-mobile-web-app-capable' content='yes'>
+	<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+	<link rel="stylesheet" href="css/docs.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</head>
+<body>
+<div class="topnav" id="links">
+	<a href="index.html">Home</a>
+	<a href="#" class="active">Documentation</a>
+	<a href="compiler.html">Online Compiler</a>
+	<a href="javascript:void(0);" class="icon" onclick="block()">
+	<i class="fa fa-bars"></i>
+	</a>
+</div>
+
+<noscript>Use a better browser bruh. (or if you using tor then np)</noscript>
+
+<h1>Documentation:</h1>
+<p>Version: WiseLang 1.0.5 Chutiya</p>
+
+<h1>Hello, World!</h1>
+<code class="prettyprint js">eww "Hello, World!";</code>
+
+<h1>The Terminator</h1>
+<code>All statements end with ";" i.e. the <a href="https://tenor.com/view/%c3%b3culos-escuro-exterminador-terminator-arnold-schwarzenegger-gif-14440790">Terminator</a></code>
+
+<h1>Declaring a Variable:</h1>
+<code class="prettyprint js">
+WTF a = 10; <br>
+WTF b = "variable";
+</code>
+<dd>Note that the variable is case-sensitive. e.g. "A" is not the name as "a"</dd>
+
+<h1>If/Else:</h1>
+<code class="prettyprint js">
+WTF a = 10; <br>
+agar a == 10 { <br>
+     eww "a is 10"; <br>
+} <br>
+nahi toh { <br>
+     eww "a is not 10"; <br>
+} <br>
+</code>
+
+<h1>Pass, Break, Comments:</h1>
+<code class="prettyprint js">
+// Comments start with // <br>
+chutiya; // pass <br>
+hatt; // break
+</code>
+
+<h1>Operators:</h1>
+<h2>Comparison Operators:</h2>
+<table>
+  <tr>
+    <th>Operator</th>
+    <th>Name</th> 
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>==</td>
+    <td>Is Equal To</td>
+    <td>x == y;</td>
+  </tr>
+  <tr>
+    <td>!=</td>
+    <td>Is not Equal To</td>
+    <td>x != y;</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>Is Greater than</td>
+    <td>x > y;</td>
+  </tr>
+  <tr>
+  	<td>>=</td>
+  	<td>Is Greater than or equal to</td>
+  	<td>x >= y;</td>
+  </tr>
+  <tr>
+  	<td><</td>
+  	<td>Is Lesser than</td>
+  	<td>x < y;</td>
+  </tr>
+  <tr>
+  	<td><=</td>
+  	<td>Is Lesser than or equal to</td>
+  	<td>x <= y;</td>
+  </tr>
+</table>
+
+<h2>Arithmetic Operators:</h2>
+<table style="width:20%">
+  <tr>
+    <th>Operator</th>
+    <th>Name</th> 
+    <th>Example</th>
+  </tr>
+  <tr>
+    <td>+</td>
+    <td>Addition</td>
+    <td>x + y;</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>Subtraction</td>
+    <td>x - y;</td>
+  </tr>
+  <tr>
+    <td>*</td>
+    <td>Multiplication</td>
+    <td>x * y;</td>
+  </tr>
+  <tr>
+  	<td>/</td>
+  	<td>Division</td>
+  	<td>x / y;</td>
+  </tr>
+  <tr>
+  	<td>%</td>
+  	<td>Modulus</td>
+  	<td>x % y;</td>
+  </tr>
+</table>
+
+<!-- JS Start -->
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script src="js/darkmode.js"></script>
+
+<script>
+	function block() {
+		var x = document.getElementById("links");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+			}
+	}
+</script>
+
+<!-- JS End -->
+
+</body>
+</html>

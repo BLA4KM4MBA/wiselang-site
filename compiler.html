@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WiseLang online Compiler</title>
+	<meta charset=UTF-8>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WiseLang Documentation</title>
+	<meta name="description" content="WiseLang: A Wise language, for wise members of AUI.">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="WiseLang">
+	<meta property="og:description" content="WiseLang: A Wise language, for wise members of AUI.">
+	<meta property="og:image" content="https://cdn.discordapp.com/emojis/832478907873624064.png?v=1" />
+	<meta name="theme-color" content="#008700" />
+	<link rel='icon' type='image/png' href='https://cdn.discordapp.com/emojis/832478907873624064.png?v=1'>
+	<link rel='icon' sizes='192x192' href='https://cdn.discordapp.com/emojis/832478907873624064.png?v=1'>
+	<meta name='mobile-web-app-capable' content='yes'>
+	<meta name='apple-mobile-web-app-capable' content='yes'>
+	<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+	<link rel="stylesheet" href="css/compile.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+</head>
+<body>
+<!-- Menu Start -->
+<div class="topnav" id="links">
+	<a href="index.html">Home</a>
+	<a href="#" class="active">Documentation</a>
+	<a href="compiler.html">Online Compiler</a>
+	<a href="javascript:void(0);" class="icon" onclick="block()">
+	<i class="fa fa-bars"></i>
+	</a>
+</div>
+<!-- Menu End -->
+
+<noscript>Use a better browser bruh. (or if you using tor then np)</noscript>
+
+<div class="container">
+	<div class="txt">
+		<h1>WiseLang v1.0.5 Online Compiler</h1>
+		<form onsubmit="return process()">
+			<label for="code">Code:</label>
+  			<input type="text" id="code" name="code"><br><br>
+  			<input type="submit" value="Run" id="run">
+		</form>
+		<h1>Output:</h1><span id="output"></span>
+	</div>
+</div>
+
+<!-- JS Start -->
+
+<script type="text/javascript">
+	function process() {
+		output = documment.getElementById('output')
+		code_eval = document.getElementById('code').value
+		  var xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		      document.getElementById("output").innerHTML = this.responseText;
+		    }
+		  };
+		  xhttp.open("GET", `https://wiselangcompiler.bla4km4mba.repl.co/run?code=${code_eval}`, true);
+		  xhttp.send();
+	}
+</script>
+
+<script>
+	function block() {
+		var x = document.getElementById("links");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+			}
+	}
+</script>
+
+<!-- JS End -->
+</body>
+</html>
