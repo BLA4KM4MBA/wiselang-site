@@ -25,8 +25,8 @@
 <!-- Menu Start -->
 <div class="topnav" id="links">
 	<a href="index.html">Home</a>
-	<a href="#" class="active">Documentation</a>
-	<a href="compiler.html">Online Compiler</a>
+	<a href="docs.html">Documentation</a>
+	<a href="#" class="active">Online Compiler</a>
 	<a href="javascript:void(0);" class="icon" onclick="block()">
 	<i class="fa fa-bars"></i>
 	</a>
@@ -38,12 +38,13 @@
 <div class="container">
 	<div class="txt">
 		<h1>WiseLang v1.0.5 Online Compiler</h1>
-		<form onsubmit="return process()">
+		<form onsubmit="process()">
 			<label for="code">Code:</label>
   			<input type="text" id="code" name="code"><br><br>
   			<input type="submit" value="Run" id="run">
 		</form>
-		<h1>Output:</h1><span id="output"></span>
+		<h1>Output:</h1>
+		<p id="output"></p>
 	</div>
 </div>
 
@@ -59,7 +60,7 @@
 		      document.getElementById("output").innerHTML = this.responseText;
 		    }
 		  };
-		  xhttp.open("GET", `https://wiselangcompiler.bla4km4mba.repl.co/run?code=${code_eval}`, true);
+		  xhttp.open("GET", "https://wiselangcompiler.bla4km4mba.repl.co/run" + "?code=" + code_eval, true);
 		  xhttp.send();
 	}
 </script>
