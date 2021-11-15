@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Lora&family=Sorts+Mill+Goudy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+
 * {
 	box-sizing: border-box;
 }
 
 body {
-  font-family: Comic Sans MS;
+  margin: 0;
+  padding-left: 2rem;
 }
 
+h1{
+  font-family: 'Sorts Mill Goudy', serif;
+}
+
+p,dd{
+  font-family: 'Poppins', sans-serif;
+}
 code {
 	font-size: 15px;
 }
