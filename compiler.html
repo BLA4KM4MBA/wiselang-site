@@ -54,14 +54,10 @@
 	function process() {
 		output = document.getElementById('output')
 		code_eval = document.getElementById('code').value
-		  var xhttp = new XMLHttpRequest();
-		  xhttp.onreadystatechange = function() {
-		    if (this.readyState == 4 && this.status == 200) {
-		      document.getElementById("output").innerHTML = this.responseText;
-		    }
-		  };
-		  xhttp.open("GET", "https://wiselangcompiler.bla4km4mba.repl.co/run" + "?code=" + code_eval, true);
-		  xhttp.send();
+	        var xmlHttp = new XMLHttpRequest();
+	        xmlHttp.open( "GET", "https://wiselangcompiler.bla4km4mba.repl.co/run?code=" + code_eval, false );
+	        xmlHttp.send( null );
+	        console.log(xmlHttp.responseText);
 	}
 </script>
 
