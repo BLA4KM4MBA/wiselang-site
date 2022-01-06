@@ -54,11 +54,10 @@
 	function process() {
 		output = document.getElementById('output')
 		code_eval = document.getElementById('code').value
-	        var xmlHttp = new XMLHttpRequest();
-	        xmlHttp.open( "GET", "https://wiselangcompiler.bla4km4mba.repl.co/run?code=" + code_eval, false );
-	        xmlHttp.send( null );
-	        console.log(xmlHttp.responseText);
-	}
+	        var client = new HttpClient();
+		client.get("https://wiselangcompiler.bla4km4mba.repl.co/run?code=" + code_eval, function(response) {
+		    console.log(response)
+		});
 </script>
 
 <script>
