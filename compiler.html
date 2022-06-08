@@ -43,7 +43,7 @@
 		<form onsubmit="process()">
 			<label for="code">Code:</label>
   			<input type="text" id="run-code" name="code"><br><br>
-  			<input type="submit" value="Run" id="run">
+  			<input type="submit" value="Run" id="run" pys-onClick="run_code">
 		</form>
 		<h1>Output:</h1>
 		<p id="output"></p>
@@ -54,8 +54,12 @@
 
 <py-script>
 	from js import console
-	code = Element('run-code').element.value
-	console.log(code)
+
+	def run_code()
+		code = Element('run-code').element.value
+		console.log(code)
+	
+
 	#import requests
 	#r=requests.get("https://bla4km4mba.github.io/wiselang-site/run?code=")
 </py-script>
