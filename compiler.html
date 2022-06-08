@@ -20,6 +20,8 @@
 	<link rel="stylesheet" href="css/compile.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body>
 <!-- Menu Start -->
@@ -40,7 +42,7 @@
 		<h1>WiseLang v1.0.5 Online Compiler</h1>
 		<form onsubmit="process()">
 			<label for="code">Code:</label>
-  			<input type="text" id="code" name="code"><br><br>
+  			<input type="text" id="run-code" name="code"><br><br>
   			<input type="submit" value="Run" id="run">
 		</form>
 		<h1>Output:</h1>
@@ -50,15 +52,13 @@
 
 <!-- JS Start -->
 
-<script type="text/javascript">
-	function process() {
-		output = document.getElementById('output')
-		code_eval = document.getElementById('code').value
-	        var client = new HttpClient();
-		client.get("https://wiselangcompiler.bla4km4mba.repl.co/run?code=" + code_eval, function(response) {
-		    console.log(response)
-		});
-</script>
+<py-script>
+	from js import console
+	code = Element('run-code').element.value
+	console.log(code)
+	#import requests
+	#r=requests.get("https://bla4km4mba.github.io/wiselang-site/run?code=")
+</py-script>
 
 <script>
 	function block() {
