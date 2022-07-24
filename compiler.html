@@ -40,28 +40,31 @@
 <div class="container">
 	<div class="txt">
 		<h1>WiseLang v1.0.5 Online Compiler</h1>
-		<form onsubmit="process()">
 			<label for="code">Code:</label>
+			<br />
   			<input type="text" id="run-code" name="code"><br><br>
-  			<input type="submit" value="Run" id="run" pys-onClick="run_code">
-		</form>
+  			<button class="btn" type="submit" id="run" pys-onClick="run_code">Run</button>
 		<h1>Output:</h1>
-		<p id="output"></p>
+		<div class="output"><h1><p id="output"></p></h1></div>
 	</div>
 </div>
 
 <!-- JS Start -->
 
 <py-script>
-	from js import console
+        from js import console
+        import json
+        from pyodide.http import pyfetch
+        import asyncio
 
-	def run_code():
-		code = Element('run-code').element.value
-		console.log(code)
+        code = Element('run-code').element.value
+
+        async def run_code(*args, **kwargs):
+                response = await pyfetch(url=f"https://wiselangcompiler.bla4km4mba.repl.co/run?code={code}", method="GET")
+                output = f"GET request=> status:{response.status}, json:{await response.json()}"
+                Element('output').element.innerText = output
+                console.log(output)
 	
-
-	#import requests
-	#r=requests.get("https://bla4km4mba.github.io/wiselang-site/run?code=")
 </py-script>
 
 <script>
