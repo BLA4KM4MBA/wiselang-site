@@ -20,8 +20,8 @@
 	<link rel="stylesheet" href="css/compile.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-	<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+<!-- 	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+	<script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
 </head>
 <body>
 <!-- Menu Start -->
@@ -43,7 +43,7 @@
 			<label for="code">Code:</label>
 			<br />
   			<input type="text" id="run-code" name="code"><br><br>
-  			<button class="btn" type="submit" id="run" pys-onClick="run_code">Run</button>
+  			<button class="btn" type="submit" id="run" on-click="run_code">Run</button>
 		<h1>Output:</h1>
 		<div class="output"><h1><p id="output"></p></h1></div>
 	</div>
