@@ -20,8 +20,6 @@
 	<link rel="stylesheet" href="css/compile.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-<!-- 	<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-	<script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
 </head>
 <body>
 <!-- Menu Start -->
@@ -51,22 +49,6 @@
 
 <!-- JS Start -->
 
-<!-- <py-script>
-        from js import console
-        import json
-        from pyodide.http import pyfetch
-        import asyncio
-
-        code = Element('run-code').element.value
-
-        async def run_code(*args, **kwargs):
-                response = await pyfetch(url=f"https://wiselangcompiler.bla4km4mba.repl.co/run?code={code}", method="GET")
-                output = f"GET request=> status:{response.status}, json:{await response.json()}"
-                Element('output').element.innerText = output
-                console.log(output)
-	
-</py-script> -->
-
 <script>
         function block() {
             var x = document.getElementById("links");
@@ -77,16 +59,17 @@
             }
         }
 
-        const API_URL = "https://wiselangcompiler.bla4km4mba.repl.co";
         let output = document.querySelector("#output");
         let code = document.querySelector("#run-code");
+	const API_URL = `https://wiselangcompiler.bla4km4mba.repl.co/run?code=${code}`;
 
         function run_code() {
-            fetch(`${API_URL}/run?code=${escape(code.textContent)}`, {
+            fetch(API_URL, {
                 mode: "cors"
             }).then((res) => res.json().then(data => {
                 output.innerHTML = data.output;
                 console.log(data);
+		console.log(res);
             }));
         }
 </script>
