@@ -51,7 +51,7 @@
 
 <!-- JS Start -->
 
-<py-script>
+<!-- <py-script>
         from js import console
         import json
         from pyodide.http import pyfetch
@@ -65,17 +65,30 @@
                 Element('output').element.innerText = output
                 console.log(output)
 	
-</py-script>
+</py-script> -->
 
 <script>
-	function block() {
-		var x = document.getElementById("links");
-		if (x.className === "topnav") {
-			x.className += " responsive";
-		} else {
-			x.className = "topnav";
-			}
-	}
+        function block() {
+            var x = document.getElementById("links");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+
+        const API_URL = "https://wiselangcompiler.bla4km4mba.repl.co";
+        let output = document.querySelector("#output");
+        let code = document.querySelector("#run-code");
+
+        function run_code() {
+            fetch(`${API_URL}/run?code=${escape(code.textContent)}`, {
+                mode: "cors"
+            }).then((res) => res.json().then(data => {
+                output.innerHTML = data.output;
+                console.log(data);
+            }));
+        }
 </script>
 
 <!-- JS End -->
