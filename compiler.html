@@ -56,12 +56,13 @@
         import json
         from pyodide.http import pyfetch
         import asyncio
+        import urllib
 
         code = Element('run-code').element.value
 
         async def run_code(*args, **kwargs):
-                response = await pyfetch(url=f"https://wiselangcompiler.bla4km4mba.repl.co/run?code={code}", method="GET")
-                output = f"GET request=> status:{response.status}, json:{await response.json()}"
+                response = await pyfetch(url=f"https://wiselangcompiler.bla4km4mba.repl.co/run?code={urllib.parse.quote_plus(code)}", method="GET")
+                output = f"GET request=> status:{response.status}, json:{await response.text()}"
                 Element('output').element.innerText = output
                 console.log(output)
 	
