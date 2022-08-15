@@ -41,7 +41,7 @@
 		<h1>WiseLang v1.0.5 Online Compiler</h1>
 			<label for="code">Code:</label>
 			<br />
-  			<input type="text" id="run-code" name="code"><br><br>
+  			<input type="text" id="user-code" name="code" autocomplete="off"><br><br>
   			<button class="btn" type="submit" id="run" onclick="run_code()">Run</button>
 		<h1>Output:</h1>
 		<div class="output"><h1><p id="output"></p></h1></div>
@@ -50,24 +50,6 @@
 
 <!-- JS Start -->
 
-<<<<<<< HEAD
-<py-script>
-        from js import console
-        import json
-        from pyodide.http import pyfetch
-        import asyncio
-        import urllib
-
-        code = Element('run-code').element.value
-
-        async def run_code(*args, **kwargs):
-                response = await pyfetch(url=f"https://wiselangcompiler.bla4km4mba.repl.co/run?code={urllib.parse.quote_plus(code)}", method="GET")
-                output = f"GET request=> status:{response.status}, json:{await response.text()}"
-                Element('output').element.innerText = output
-                console.log(output)
-	
-</py-script>
-=======
 <script>
         function block() {
             var x = document.getElementById("links");
@@ -78,19 +60,23 @@
             }
         }
 
-        let output = document.querySelector("#output");
-        let code = document.querySelector("#run-code");
-	const API_URL = `https://wiselangcompiler.bla4km4mba.repl.co/run?code=${escape(code.textContent)}`;
->>>>>>> 7251fce61186c9a73900cf03fad9578c6b413e26
+	function get_val() {
+		return document.getElementById("user-code").value;
+	}
 
-        function run_code() {
-            fetch(API_URL, {
-                mode: "cors"
+	function run_code() {
+		console.log(get_val());
+		var API_URL = `https://wiselangcompiler.bla4km4mba.repl.co/run?code=${get_val()}`;
+
+	        fetch(API_URL, {
+			mode: "cors"
             }).then((res) => res.json().then(data => {
-                output.innerHTML = data.output;
-                console.log(data);
+               	//  output.innerHTML = data.output;
+		console.log(data);
+               	document.getElementById("output").innerHTML = data.output;
             }));
-        }
+
+	}
 </script>
 
 <!-- JS End -->

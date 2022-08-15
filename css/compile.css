@@ -30,7 +30,7 @@ h1{
     background-color: #16141f;
     background-position: center;
     width: 50%;
-    height: 50%;
+    height: 80%;
     border-radius: 10px;
     text-align: center;
     font-family: 'Poppins', sans-serif;
@@ -75,6 +75,11 @@ h1{
     float: right;
     display: block;
   }
+  .txt {
+	   width: 80%;
+	   height: 80%;
+	   right: 10%;
+ }
 }
 
 @media screen and (max-width: 600px) {
@@ -106,7 +111,7 @@ h1{
 }
 
 .output {
-	left: 100 px;
+	margin-left: 500 px;
 	background-color: white;
 	color: black;
 	width: 50%;
@@ -114,4 +119,18 @@ h1{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border-radius: 10px;
+	font-family: arial;
+	font-size: 24px;
+	margin: 25px;
+	width: 350px;
+	height: 200px;
+	outline: dashed 1px black;
+	margin: 0 auto;
+}
+
+input {
+  height:  100px;
+  width: 500px;
+  border-radius: 10px;
 }
